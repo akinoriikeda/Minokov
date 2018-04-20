@@ -1,6 +1,6 @@
 val m = Map("abc"->1)
 
-m.put("def", 2)
+//m.put("def", 2)
 
 //
 
