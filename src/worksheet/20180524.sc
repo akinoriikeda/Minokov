@@ -1,3 +1,5 @@
+import scala.util.Try
+
 case class GID(value: String)
 
 val aclids = Set("AUTHENTICATED_TEST_GROUP_1", "2", "3")
@@ -16,3 +18,9 @@ aclids.intersect(c.toSet).map { n =>
 }.toSeq
 
 (aclids.map(GID(_)).intersect(gids.toSet)).toSeq
+
+val a = null
+val aa = Option(a)
+
+
+
