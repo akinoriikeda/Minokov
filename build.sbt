@@ -47,6 +47,9 @@ val specs2_core = "org.specs2" %% "specs2-core" % "4.0.4"
 val specs2_mock = "org.specs2" %% "specs2-mock" % "4.0.4"
 val specs2_junit = "org.specs2" %% "specs2-junit" % "4.0.4"
 
+// akka
+val akka_actor = "com.typesafe.akka" %% "akka-actor" % "2.5.14"
+
 val module_core_deps = Seq(
   slf4j_api,
   scala_logging,
@@ -56,7 +59,8 @@ val module_core_deps = Seq(
   config,
   specs2_core % Test,
   specs2_mock % Test,
-  specs2_junit % Test
+  specs2_junit % Test,
+  akka_actor
 )
 
 libraryDependencies ++= Seq("org.apache.commons" % "commons-lang3" % "3.7",
