@@ -64,8 +64,8 @@ val module_core_deps = Seq(
 )
 
 libraryDependencies ++= Seq("org.apache.commons" % "commons-lang3" % "3.7", "commons-io" % "commons-io" % "2.6")
-libraryDependencies += "io.gatling.highcharts" % "gatling-charts-highcharts" % "2.3.0" % "test"
-libraryDependencies += "io.gatling" % "gatling-test-framework" % "2.3.0" % "test" excludeAll (ExclusionRule(
+libraryDependencies += "io.gatling.highcharts" % "gatling-charts-highcharts" % "2.3.0"
+libraryDependencies += "io.gatling" % "gatling-test-framework" % "2.3.0" excludeAll (ExclusionRule(
   "com.fasterxml.jackson.core"
 ), ExclusionRule(
   "com.fasterxml.jackson.dataformat"
@@ -82,6 +82,15 @@ libraryDependencies += "com.amazonaws" % "aws-java-sdk-dynamodb" % "1.11.356" ex
 ), ExclusionRule(
   "com.fasterxml.jackson.dataformat"
 ))
+
+//--
+
+libraryDependencies += "com.fasterxml.jackson.core" % "jackson-core" % "2.8.9"
+libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.8.9"
+libraryDependencies += "com.fasterxml.jackson.core" % "jackson-annotations" % "2.8.9"
+libraryDependencies += "com.fasterxml.jackson.dataformat" % "jackson-dataformat-cbor" % "2.8.9"
+
+//---
 
 libraryDependencies ++= module_core_deps
 
