@@ -63,8 +63,26 @@ val module_core_deps = Seq(
   akka_actor
 )
 
-libraryDependencies ++= Seq("org.apache.commons" % "commons-lang3" % "3.7",
-  "commons-io" % "commons-io" % "2.6")
+libraryDependencies ++= Seq("org.apache.commons" % "commons-lang3" % "3.7", "commons-io" % "commons-io" % "2.6")
+libraryDependencies += "io.gatling.highcharts" % "gatling-charts-highcharts" % "2.3.0" % "test"
+libraryDependencies += "io.gatling" % "gatling-test-framework" % "2.3.0" % "test" excludeAll (ExclusionRule(
+  "com.fasterxml.jackson.core"
+), ExclusionRule(
+  "com.fasterxml.jackson.dataformat"
+))
+libraryDependencies += "com.typesafe.play" %% "play-json" % "2.6.6"
+libraryDependencies += "com.typesafe.akka" %% "akka-stream" % "2.5.13"
+libraryDependencies += "com.amazonaws" % "aws-java-sdk-kinesis" % "1.11.356" excludeAll (ExclusionRule(
+  "com.fasterxml.jackson.core"
+), ExclusionRule(
+  "com.fasterxml.jackson.dataformat"
+))
+libraryDependencies += "com.amazonaws" % "aws-java-sdk-dynamodb" % "1.11.356" excludeAll (ExclusionRule(
+  "com.fasterxml.jackson.core"
+), ExclusionRule(
+  "com.fasterxml.jackson.dataformat"
+))
+
 libraryDependencies ++= module_core_deps
 
 //enablePlugins(CloudformationPlugin)
