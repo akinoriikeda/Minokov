@@ -1,3 +1,5 @@
+
+
 name := "Minokov"
 
 version := "0.1"
@@ -47,9 +49,6 @@ val specs2_core = "org.specs2" %% "specs2-core" % "4.0.4"
 val specs2_mock = "org.specs2" %% "specs2-mock" % "4.0.4"
 val specs2_junit = "org.specs2" %% "specs2-junit" % "4.0.4"
 
-// akka
-val akka_actor = "com.typesafe.akka" %% "akka-actor" % "2.5.14"
-
 val module_core_deps = Seq(
   slf4j_api,
   scala_logging,
@@ -59,8 +58,10 @@ val module_core_deps = Seq(
   config,
   specs2_core % Test,
   specs2_mock % Test,
-  specs2_junit % Test,
-  akka_actor
+  specs2_junit % Test
+//  specs2_core,
+//  specs2_mock,
+//  specs2_junit
 )
 
 libraryDependencies ++= Seq("org.apache.commons" % "commons-lang3" % "3.7", "commons-io" % "commons-io" % "2.6")
@@ -96,3 +97,29 @@ libraryDependencies ++= module_core_deps
 
 //enablePlugins(CloudformationPlugin)
 //enablePlugins(ServerlessPlugin)
+
+//---
+// akka
+//libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.5.14"
+//libraryDependencies += "com.typesafe.akka" %% "akka-stream-experimental_2.11" % "1.0-M3"
+
+libraryDependencies ++= Seq(
+  "com.typesafe.akka" %% "akka-actor"            % "2.5.16",
+  "com.typesafe.akka" %% "akka-testkit"          % "2.5.16" % Test
+)
+libraryDependencies ++= Seq(
+  "com.typesafe.akka" %% "akka-stream"           % "2.5.16",
+  "com.typesafe.akka" %% "akka-stream-testkit"   % "2.5.16" % Test
+)
+libraryDependencies ++= Seq(
+  "com.typesafe.akka" %% "akka-http"             % "10.1.5",
+  "com.typesafe.akka" %% "akka-http-testkit"     % "10.1.5" % Test
+)
+libraryDependencies +=
+  "com.typesafe.akka" %% "akka-cluster"          % "2.5.16"
+libraryDependencies +=
+  "com.typesafe.akka" %% "akka-cluster-sharding" %  "2.5.16"
+libraryDependencies +=
+  "com.typesafe.akka" %% "akka-distributed-data" % "2.5.16"
+libraryDependencies +=
+  "com.typesafe.akka" %% "akka-persistence"      % "2.5.16"
