@@ -1,10 +1,11 @@
 
-
 name := "Minokov"
 
 version := "0.1"
 
 scalaVersion := "2.12.5"
+
+scalafmtConfig in ThisBuild := Some(file(".scalafmt.conf"))
 
 // slf4j
 // https://www.slf4j.org/news.html

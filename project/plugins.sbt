@@ -22,3 +22,6 @@ addSbtPlugin("com.github.gseitz" % "sbt-release" % "1.0.8")
 
 // https://github.com/jrudolph/sbt-dependency-graph
 addSbtPlugin("net.virtual-void" % "sbt-dependency-graph" % "0.9.0")
+
+// https://scalameta.org/scalafmt/docs/installation.html
+addSbtPlugin("com.geirsson" % "sbt-scalafmt" % "1.5.1")
