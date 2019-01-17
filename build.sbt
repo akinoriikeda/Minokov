@@ -3,7 +3,7 @@ name := "Minokov"
 
 version := "0.1"
 
-scalaVersion := "2.12.5"
+scalaVersion := "2.12.6"
 
 scalafmtConfig in ThisBuild := Some(file(".scalafmt.conf"))
 
@@ -44,22 +44,33 @@ val sprayJson = "io.spray" %% "spray-json" % "1.3.3"
 // https://github.com/debasishg/scala-redis
 val redis_client = "net.debasishg" %% "redisclient" % "3.5"
 
-// Specs2
-// https://github.com/etorreborre/specs2
-val specs2_core = "org.specs2" %% "specs2-core" % "4.0.4"
-val specs2_mock = "org.specs2" %% "specs2-mock" % "4.0.4"
-val specs2_junit = "org.specs2" %% "specs2-junit" % "4.0.4"
-
 val module_core_deps = Seq(
   slf4j_api,
   scala_logging,
   logback_core,
   logBack_classic,
   dispatch_core,
-  config,
-  specs2_core % Test,
-  specs2_mock % Test,
-  specs2_junit % Test
+  config
+)
+
+// mockito
+val mockito = "org.mockito" % "mockito-core" % "2.13.0" % "test"
+
+// Specs2
+// https://github.com/etorreborre/specs2
+val specs2_core = "org.specs2" %% "specs2-core" % "4.0.4"
+val specs2_mock = "org.specs2" %% "specs2-mock" % "4.0.4"
+val specs2_junit = "org.specs2" %% "specs2-junit" % "4.0.4"
+
+// scalaTest
+val scalaTest = "org.scalatest" %% "scalatest" % "3.0.5" % "test"
+
+val module_test = Seq(
+  mockito,
+  scalaTest
+//  specs2_core % Test,
+//  specs2_mock % Test,
+//  specs2_junit % Test
 //  specs2_core,
 //  specs2_mock,
 //  specs2_junit
@@ -95,6 +106,8 @@ libraryDependencies += "com.fasterxml.jackson.dataformat" % "jackson-dataformat-
 //---
 
 libraryDependencies ++= module_core_deps
+
+libraryDependencies ++= module_test
 
 //enablePlugins(CloudformationPlugin)
 //enablePlugins(ServerlessPlugin)
