@@ -1,2 +1,2 @@
-Word Up
-<span style="color:orange;">Word up</span>
+
+<font color='red'>red color font</font>
